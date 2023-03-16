@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
+
+body {
+	background-color: rgb(138, 138, 138);
+	font-family: 'Montserrat', sans-serif;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.container {
+	margin: 0 auto;
+	padding-top: 50px;
+}
+
+.important {
+	font-weight: bold;
+	color: #A40E11;
+}
+
+.todo_list {
+	max-width: 400px;
+	display: block;
+	margin: 0 auto 40px;
+	background-color: rgb(49, 49, 49);
+	padding: 30px;
+	border-radius: 10px;
+	border: 3px solid black;
+	-webkit-box-shadow: 8px 8px 24px 0px rgba(61, 63, 80, 1);
+	-moz-box-shadow: 8px 8px 24px 0px rgba(61, 63, 80, 1);
+	box-shadow: 8px 8px 24px 0px rgba(61, 63, 80, 1);
+}
+
+.task {
+	display: flex;
+	border-bottom: 2px solid #000;
+	align-items: center;
+}
+
+.checked {
+	appearance: none;
+	background-color: #fff;
+  margin: 0;
+	font: inherit;
+  width: 16px;
+  height: 16px;
+  border: 3px solid;
+  border-radius: 0.15em;
+	display: grid;
+  place-content: center;
+	cursor: pointer;
+}
+
+.checked::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em;
+	transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checked:checked::before {
+  transform: scale(1);
+}
+
+h1 {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 20px;
+	color: #fff;
+	font-size: 30px;
+}
+
+.create_new_todo {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 5px;
+}
+
+input[type=text] {
+	width: 376px;
+	padding: 10px;
+	border-radius: 10px;
+	border: 3px solid black;
+	outline: none;
+	font-family: inherit;
+}
+
+
+button {
+	margin-top: 10px;
+	width: 400px;
+	padding: 10px;
+	cursor: pointer;
+	border: 3px solid black;
+	border-radius: 10px;
+	font-family: inherit;
+	font-weight: bold;
+}
+
+.todo {
+	padding-left: 0;
+}
+
+.todo li {
+	padding: 1em;
+	list-style-type: none;
+	color: white;
+}
+
+.completed {
+	text-decoration: line-through;
+}
+
+
