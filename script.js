@@ -47,6 +47,8 @@ class Task {
 
 		let deleteButton = document.createElement('div');
 		deleteButton.dataset.id = 'delete';
+		deleteButton.classList.add('deleteBtn');
+		deleteButton.textContent = 'X'
 		deleteButton.addEventListener('click', () => this.deleteTask(this.div));
 
 		this.div.append(input);

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
-
 body {
 	background-color: rgb(138, 138, 138);
 	font-family: 'Montserrat', sans-serif;
@@ -34,6 +33,8 @@ body {
 	display: flex;
 	border-bottom: 2px solid #000;
 	align-items: center;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
 .checked {
@@ -107,13 +108,29 @@ button {
 }
 
 .todo li {
-	padding: 1em;
+	padding: 16px;
 	list-style-type: none;
 	color: white;
+	width: 90%;
+	transition: 120ms linear all;
 }
 
-.completed {
+.completed li {
 	text-decoration: line-through;
+	color: black;
+	transition: 120ms linear all;
 }
 
-
+.deleteBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	width: 16px;
+	height: 16px;
+	background-color: white;
+	cursor: pointer;
+	border: 2px solid black;
+	box-sizing: border-box;
+	margin: 0;
+}
