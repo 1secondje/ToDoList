@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
+
 body {
 	background-color: rgb(138, 138, 138);
 	font-family: 'Montserrat', sans-serif;
@@ -40,30 +41,30 @@ body {
 .checked {
 	appearance: none;
 	background-color: #fff;
-  margin: 0;
+	margin: 0;
 	font: inherit;
-  width: 16px;
-  height: 16px;
-  border: 3px solid;
-  border-radius: 0.15em;
+	width: 16px;
+	height: 16px;
+	border: 3px solid;
+	border-radius: 0.15em;
 	display: grid;
-  place-content: center;
+	place-content: center;
 	cursor: pointer;
 }
 
 .checked::before {
-  content: "";
-  width: 0.65em;
-  height: 0.65em;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em;
+	content: "";
+	width: 0.65em;
+	height: 0.65em;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em;
 	transform-origin: bottom left;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+	clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
 .checked:checked::before {
-  transform: scale(1);
+	transform: scale(1);
 }
 
 h1 {
@@ -72,6 +73,7 @@ h1 {
 	margin-bottom: 20px;
 	color: #fff;
 	font-size: 30px;
+	position: relative;
 }
 
 .create_new_todo {
@@ -79,7 +81,6 @@ h1 {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	padding: 5px;
 }
 
 input[type=text] {
@@ -133,4 +134,33 @@ button {
 	border: 2px solid black;
 	box-sizing: border-box;
 	margin: 0;
+}
+
+.buttons-flex {
+	display: flex;
+	justify-content: space-between;
+}
+
+.buttons-flex button {
+	width: 49%;
+}
+
+.start-message {
+	text-align: center;
+	margin-bottom: 0;
+	font-size: 20px;
+}
+
+.deleteAll {
+	position: absolute;
+	height: 36px;
+	width: 36px;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+.deleteAll img {
+	height: 36px;
+	width: 36px;
 }

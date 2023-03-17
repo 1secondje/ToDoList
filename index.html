@@ -13,14 +13,19 @@
 	<div class="container">
 
 		<div class="todo_list">
-			<h1>ToDoList</h1>
+			<h1>ToDoList <div class="deleteAll"><img src="./images/deleteAll-icon.png" alt="delete all"></div></h1>
 			<div class="create_new_todo">
 				<input type="text" class="addTaskText" maxlength="35">
 				<button class="addTask">add task</button>
+				<div class="buttons-flex">
+					<button class="not-completed-tasks">show uncompleted tasks</button>
+					<button class="show-all">show all tasks</button>
+				</div>
 			</div>
 
 			<div class="wrapper">
 				<ul class="todo"></ul>
+				<p class="start-message">there are no tasks</p>
 			</div>
 
 		</div>

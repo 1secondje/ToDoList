@@ -1,21 +1,24 @@
 let taskNameInput = document.querySelector(".addTaskText");
 let addTaskButton = document.querySelector(".addTask");
 let taskList = document.querySelector(".todo");
-let notCompleted = document.querySelector('#not-completed-tasks');
-let showAll = document.querySelector('#show-all');
+let startMessage = document.querySelector(".start-message");
+let notCompleted = document.querySelector('.not-completed-tasks');
+let showAll = document.querySelector('.show-all');
+let deleteAllBtn = document.querySelector('.deleteAll')
 let tasks = [];
 
 addTaskButton.addEventListener("click", addTaskHandler);
-
+deleteAllBtn.addEventListener('click', deleteAll)
 taskNameInput.addEventListener("keydown", function (e) {
 	if (e.code == "Enter") addTaskHandler();
 })
 
-// notCompleted.addEventListener('click', showNotCompleted);
-// showAll.addEventListener('click', showAllTasks)
+notCompleted.addEventListener('click', showNotCompleted);
+showAll.addEventListener('click', showAllTasks)
 
 function addTaskHandler() {
 	if (taskNameInput.value) {
+		if (!startMessage.hidden) startMessage.hidden = true;
 		let newTask = new Task(taskNameInput.value);
 		newTask.createTask(taskList);
 		tasks.push(newTask);
@@ -75,19 +78,29 @@ class Task {
 		this.div.remove();
 		this.isDeleted = true;
 	}
+}
+
+function deleteAll() {
+	for (i = 0; i < tasks.length; i++) {
+		for (let i = 0; i < tasks.length; i++) {
+			tasks[i].deleteTask();
+		}
+		tasks = [];
+		startMessage.hidden = false;
+	}
 
 }
 
-// function showNotCompleted() {
-// 	taskList.innerHTML = '';
-// 	for (let task of tasks) {
-// 		if (!task.isDone) {
-// 			task.createTask(taskList)
-// 		}
-// 	}
-// }
+function showNotCompleted() {
+	taskList.innerHTML = '';
+	for (let task of tasks) {
+		if (!task.isDone) {
+			task.createTask(taskList)
+		}
+	}
+}
 
-// function showAllTasks() {
-// 	taskList.innerHTML = '';
-// 	tasks.forEach(task => task.createTask(taskList))
-// }
+function showAllTasks() {
+	taskList.innerHTML = '';
+	tasks.forEach(task => task.createTask(taskList))
+}
