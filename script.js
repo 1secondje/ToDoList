@@ -98,7 +98,6 @@ class Task {
 				}
 			}
 		});
-		// 
 		newInput.focus();
 	}
 	
@@ -118,6 +117,7 @@ class Task {
 			startMessage.hidden = false;
 		}
 	}
+	// 
 }
 // 
 
